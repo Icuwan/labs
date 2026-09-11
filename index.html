@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:title" content="Icuwan Labs">
+    <meta property="og:description"
+        content="Icuwan Labs builds websites, web apps, and custom software for businesses, and helps them work out what's worth building first.">
+
+    <title>Icuwan Labs</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "oldenglishmt";
+            src: url("/font/oldenglishtextmt.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .oldenglishmt {
+            font-family: "oldenglishmt", sans-serif;
+        }
+
+        /* faint dot grid behind the hero */
+        .dot-grid {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 22px 22px;
+            -webkit-mask-image: radial-gradient(ellipse at 50% 35%, #000 25%, transparent 70%);
+            mask-image: radial-gradient(ellipse at 50% 35%, #000 25%, transparent 70%);
+        }
+
+        /* syntax colors */
+        .tk-k {
+            color: #d8b4fe;
+        }
+
+        .tk-s {
+            color: #fde68a;
+        }
+
+        .tk-f {
+            color: #93c5fd;
+        }
+
+        .tk-c {
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .tk-t {
+            color: #f9a8d4;
+        }
+
+        .tk-a {
+            color: #a5b4fc;
+        }
+
+        .tk-p {
+            color: #e5e7eb;
+        }
+
+        .tk-h {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .tk-ok {
+            color: #86efac;
+        }
+
+        .caret {
+            display: inline-block;
+            width: 0.55em;
+            height: 1.15em;
+            background: #e5e7eb;
+            vertical-align: text-bottom;
+            margin-left: 1px;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .file-tab[aria-selected="true"] {
+            background: #1f2937;
+            color: #f9fafb;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .caret {
+                animation: none;
+            }
+
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="bg-white text-gray-900">
+
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+
+            <a href="/"
+                class="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-4">
+                <h1 class="text-2xl font-bold tracking-tight">
+                    <span class="oldenglishmt">Icuwan</span> Labs
+                </h1>
+                <p class="text-xs text-gray-500">
+                    In-house studio of Icuwan LLC
+                </p>
+            </a>
+
+            <nav class="flex items-center gap-6">
+                <a href="https://icuwan.com" target="_blank" class="hidden sm:inline font-medium text-gray-500 hover:text-black transition">
+                    Parent
+                </a>
+                <a href="mailto:hi@icuwan.com" target="_blank" rel="noopener" class="font-medium text-gray-700 hover:text-black transition">
+                    Contact
+                </a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+
+        <div class="dot-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative max-w-5xl mx-auto text-center pt-28 pb-24 px-6">
+
+            <div
+                class="inline-flex items-center gap-2 bg-gray-100 px-5 py-2 rounded-full text-sm text-gray-600 mb-8 font-mono">
+                <span class="text-gray-400">~/</span>icuwan/labs
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl font-extrabold mb-6 tracking-tight">
+                <span class="oldenglishmt">Icuwan</span>
+                Labs
+            </h1>
+
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
+                We build websites, web apps, and custom software for businesses. Before any of that,
+                we help you figure out what's actually worth building, so you don't pay for something you
+                didn't need.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://calendly.com/wasdthedebugger/talk-to-nikas" target="_blank" rel="noopener"
+                    class="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-4">
+                    Book a call
+                </a>
+                <a href="mailto:hi@icuwan.com"
+                    class="border border-gray-300 bg-white px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-4">
+                    Email Labs
+                </a>
+            </div>
+
+
+            <!-- Editor -->
+            <div
+                class="mt-20 max-w-4xl mx-auto text-left bg-gray-900 rounded-3xl shadow-2xl overflow-hidden ring-1 ring-black/5">
+
+                <div class="flex items-center gap-4 bg-gray-950 px-5 pt-4">
+                    <div class="flex gap-2 pb-4 shrink-0" aria-hidden="true">
+                        <span class="w-3 h-3 rounded-full bg-red-400/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-400/80"></span>
+                    </div>
+
+                    <div role="tablist" aria-label="What Labs does, as files"
+                        class="flex gap-1 overflow-x-auto font-mono text-xs sm:text-sm">
+                        <button role="tab" id="tab-website" aria-controls="editor-panel" aria-selected="true"
+                            tabindex="0" data-file="website"
+                            class="file-tab px-4 py-2.5 rounded-t-xl text-gray-400 hover:text-gray-100 whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gray-300">website.tsx</button>
+                        <button role="tab" id="tab-webapp" aria-controls="editor-panel" aria-selected="false"
+                            tabindex="-1" data-file="webapp"
+                            class="file-tab px-4 py-2.5 rounded-t-xl text-gray-400 hover:text-gray-100 whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gray-300">webapp.ts</button>
+                        <button role="tab" id="tab-consult" aria-controls="editor-panel" aria-selected="false"
+                            tabindex="-1" data-file="consult"
+                            class="file-tab px-4 py-2.5 rounded-t-xl text-gray-400 hover:text-gray-100 whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gray-300">consult.md</button>
+                        <button role="tab" id="tab-deploy" aria-controls="editor-panel" aria-selected="false"
+                            tabindex="-1" data-file="deploy"
+                            class="file-tab px-4 py-2.5 rounded-t-xl text-gray-400 hover:text-gray-100 whitespace-nowrap transition focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gray-300">deploy.sh</button>
+                    </div>
+                </div>
+
+                <div id="editor-panel" role="tabpanel" aria-labelledby="tab-website"
+                    class="bg-gray-800/40 py-6 pr-6 overflow-x-auto font-mono text-xs sm:text-sm leading-7">
+                    <div id="code"></div>
+                </div>
+
+                <div
+                    class="flex justify-between items-center bg-gray-950 px-5 py-2 font-mono text-[11px] text-gray-500">
+                    <span><span id="lang">TypeScript React</span> · UTF-8</span>
+                    <span id="pos">Ln 1, Col 1</span>
+                </div>
+
+            </div>
+
+            <p class="mt-5 text-sm text-gray-400">Click a file to see the rest of what we do.</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Services -->
+    <section class="bg-gray-50 py-28 px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-14">
+                <p class="uppercase tracking-widest text-sm text-gray-500">
+                    Services
+                </p>
+                <h2 class="text-4xl font-bold mt-3">
+                    What we do
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <div class="bg-white rounded-3xl shadow-md p-10 hover:shadow-xl transition flex flex-col">
+                    <p class="font-mono text-sm text-gray-400 mb-4">// websites</p>
+                    <h3 class="text-2xl font-semibold mb-3">Websites</h3>
+                    <p class="text-gray-700 mb-8">
+                        Business sites, portfolios, and landing pages. They load fast, look right on a phone,
+                        and you can update the text yourself without emailing us every time.
+                    </p>
+                    <code
+                        class="mt-auto block bg-gray-100 rounded-xl px-4 py-3 font-mono text-sm text-gray-600 overflow-x-auto whitespace-nowrap">&lt;Page fast responsive /&gt;</code>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-md p-10 hover:shadow-xl transition flex flex-col">
+                    <p class="font-mono text-sm text-gray-400 mb-4">// web apps</p>
+                    <h3 class="text-2xl font-semibold mb-3">Web apps</h3>
+                    <p class="text-gray-700 mb-8">
+                        Client portals, booking systems, dashboards, internal tools. Anything with logins,
+                        a database, and people depending on it to work every day.
+                    </p>
+                    <code
+                        class="mt-auto block bg-gray-100 rounded-xl px-4 py-3 font-mono text-sm text-gray-600 overflow-x-auto whitespace-nowrap">await app.ship();</code>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-md p-10 hover:shadow-xl transition flex flex-col">
+                    <p class="font-mono text-sm text-gray-400 mb-4">// custom software</p>
+                    <h3 class="text-2xl font-semibold mb-3">Custom software</h3>
+                    <p class="text-gray-700 mb-8">
+                        Scripts, integrations, and small tools that connect the systems you already use,
+                        or take a job someone does by hand every week and make it happen on its own.
+                    </p>
+                    <code
+                        class="mt-auto block bg-gray-100 rounded-xl px-4 py-3 font-mono text-sm text-gray-600 overflow-x-auto whitespace-nowrap">schedule("every monday 8am", sendReport);</code>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-md p-10 hover:shadow-xl transition flex flex-col">
+                    <p class="font-mono text-sm text-gray-400 mb-4">// consulting</p>
+                    <h3 class="text-2xl font-semibold mb-3">Consulting</h3>
+                    <p class="text-gray-700 mb-8">
+                        Not sure what you need yet? We look at how your business runs and what you already
+                        pay for, then tell you straight whether custom software makes sense. Sometimes it doesn't.
+                    </p>
+                    <code
+                        class="mt-auto block bg-gray-100 rounded-xl px-4 py-3 font-mono text-sm text-gray-600 overflow-x-auto whitespace-nowrap">if (!worthIt) return "buy it instead";</code>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Process -->
+    <section class="bg-white py-28 px-6">
+
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-14 items-center">
+
+            <div class="lg:col-span-2">
+                <p class="uppercase tracking-widest text-sm text-gray-500">
+                    From first call to launch
+                </p>
+                <h2 class="text-4xl font-bold mt-3 mb-6">
+                    How a project goes
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    A five-page site and a full web app go through the same steps. You'll know what's being
+                    built, what it costs, and what happens next before we start.
+                </p>
+            </div>
+
+            <div class="lg:col-span-3 bg-gray-900 rounded-3xl shadow-xl overflow-hidden">
+
+                <div class="flex items-center gap-2 bg-gray-950 px-5 py-4" aria-hidden="true">
+                    <span class="w-3 h-3 rounded-full bg-red-400/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-400/80"></span>
+                    <span class="ml-3 font-mono text-xs text-gray-500">zsh — labs</span>
+                </div>
+
+                <div class="p-6 sm:p-8 font-mono text-sm leading-7 text-gray-200">
+
+                    <p><span class="tk-k">$</span> labs new-project <span class="tk-a">--client</span> <span
+                            class="tk-s">you</span></p>
+
+                    <ol class="mt-3 space-y-3 sm:space-y-1">
+                        <li class="sm:grid sm:grid-cols-[3.5rem_7.5rem_1fr]">
+                            <span class="text-gray-500">[1/5]</span>
+                            <span class="tk-f">intro call</span>
+                            <span class="block sm:inline text-gray-400">we ask a lot of questions and mostly
+                                listen</span>
+                        </li>
+                        <li class="sm:grid sm:grid-cols-[3.5rem_7.5rem_1fr]">
+                            <span class="text-gray-500">[2/5]</span>
+                            <span class="tk-f">scope</span>
+                            <span class="block sm:inline text-gray-400">a written plan: what gets built, the cost, the
+                                timeline</span>
+                        </li>
+                        <li class="sm:grid sm:grid-cols-[3.5rem_7.5rem_1fr]">
+                            <span class="text-gray-500">[3/5]</span>
+                            <span class="tk-f">build</span>
+                            <span class="block sm:inline text-gray-400">you see it working early, not only at the
+                                end</span>
+                        </li>
+                        <li class="sm:grid sm:grid-cols-[3.5rem_7.5rem_1fr]">
+                            <span class="text-gray-500">[4/5]</span>
+                            <span class="tk-f">launch</span>
+                            <span class="block sm:inline text-gray-400">we deploy it, test it, and hand you the
+                                keys</span>
+                        </li>
+                        <li class="sm:grid sm:grid-cols-[3.5rem_7.5rem_1fr]">
+                            <span class="text-gray-500">[5/5]</span>
+                            <span class="tk-f">support</span>
+                            <span class="block sm:inline text-gray-400">fixes and changes once it's live</span>
+                        </li>
+                    </ol>
+
+                    <p class="mt-4"><span class="tk-ok">✓</span> done. your thing is live.</p>
+                    <p><span class="tk-k">$</span> <span class="caret" aria-hidden="true"></span></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+    <section class="bg-gray-50 py-28 px-6">
+
+        <div class="max-w-5xl mx-auto bg-gray-900 text-white rounded-3xl shadow-xl p-10 lg:p-16 text-center">
+
+            <p class="font-mono text-sm text-gray-400 mb-4">
+                <span class="tk-k">$</span> labs --contact
+            </p>
+
+            <h2 class="text-4xl font-bold mb-5">
+                Have something you want built?
+            </h2>
+
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
+                Tell us what's slowing your business down, or what you wish existed. If we're not the
+                right fit for it, we'll say so.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://calendly.com/wasdthedebugger/talk-to-nikas" target="_blank" rel="noopener"
+                    class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-gray-900">
+                    Book a call
+                </a>
+                <a href="mailto:hi@icuwan.com"
+                    class="border border-white/20 px-8 py-4 rounded-full font-semibold font-mono hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-gray-900">
+                    hi@icuwan.com
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-10">
+
+        <div class="text-center text-sm text-gray-500">
+            <p>
+                © 2026 Icuwan LLC. All rights reserved.
+            </p>
+            <p class="mt-2">
+                <span class="oldenglishmt">Icuwan</span> Labs is an in-house studio of
+                <a href="/" class="underline hover:text-black"><span class="oldenglishmt">Icuwan</span> LLC</a>,
+                registered in the Commonwealth of Virginia
+            </p>
+            </p>
+        </div>
+
+    </footer>
+
+
+
+    <script>
+        // Each file: array of lines, each line an array of [tokenClass, text]
+        const files = {
+            website: {
+                lang: "TypeScript React",
+                lines: [
+                    [["c", "// your site, the way you described it"]],
+                    [["k", "export default function "], ["f", "YourSite"], ["p", "() {"]],
+                    [["p", "  "], ["k", "return"], ["p", " ("]],
+                    [["p", "    <"], ["t", "Page"], ["a", " fast responsive"], ["p", ">"]],
+                    [["p", "      <"], ["t", "Hero"], ["a", " title"], ["p", "="], ["s", "\"What you do, said plainly\""], ["p", " />"]],
+                    [["p", "      <"], ["t", "Services"], ["a", " editableByYou"], ["p", " />"]],
+                    [["p", "      <"], ["t", "Booking"], ["a", " calendar"], ["p", " />"]],
+                    [["p", "      <"], ["t", "Contact"], ["a", " form"], ["p", " />"]],
+                    [["p", "    </"], ["t", "Page"], ["p", ">"]],
+                    [["p", "  );"]],
+                    [["p", "}"]]
+                ]
+            },
+            webapp: {
+                lang: "TypeScript",
+                lines: [
+                    [["k", "import"], ["p", " { labs } "], ["k", "from"], ["s", " \"@icuwan/labs\""], ["p", ";"]],
+                    [],
+                    [["k", "const"], ["p", " app = labs."], ["f", "build"], ["p", "({"]],
+                    [["p", "  users: "], ["s", "\"your customers and your team\""], ["p", ","]],
+                    [["p", "  login: "], ["k", "true"], ["p", ","]],
+                    [["p", "  dashboard: "], ["k", "true"], ["p", ","]],
+                    [["p", "  payments: "], ["s", "\"when you need them\""], ["p", ","]],
+                    [["p", "  hosting: "], ["s", "\"handled\""], ["p", ","]],
+                    [["p", "});"]],
+                    [],
+                    [["k", "await"], ["p", " app."], ["f", "ship"], ["p", "();"], ["c", " // staging first, always"]]
+                ]
+            },
+            consult: {
+                lang: "Markdown",
+                lines: [
+                    [["h", "# Before anyone writes code"]],
+                    [],
+                    [["k", "- "], ["p", "What problem are we actually solving?"]],
+                    [["k", "- "], ["p", "Who uses this, and how often?"]],
+                    [["k", "- "], ["p", "Is there something you can just buy instead?"]],
+                    [["k", "- "], ["p", "What's the smallest version worth building?"]],
+                    [],
+                    [["c", "> Sometimes the honest answer is \"don't build it.\""]],
+                    [["c", "> We'll tell you when that's the case."]]
+                ]
+            },
+            deploy: {
+                lang: "Shell",
+                lines: [
+                    [["k", "$ "], ["p", "git push origin main"]],
+                    [["ok", "✓ "], ["p", "tests passed"]],
+                    [["ok", "✓ "], ["p", "build finished in 21s"]],
+                    [["ok", "✓ "], ["p", "deployed to production"]],
+                    [],
+                    [["f", "→ "], ["s", "https://yourbusiness.com"]],
+                    [],
+                    [["c", "# live. we stick around for fixes after launch."]]
+                ]
+            }
+        };
+
+        const codeEl = document.getElementById("code");
+        const langEl = document.getElementById("lang");
+        const posEl = document.getElementById("pos");
+        const panel = document.getElementById("editor-panel");
+        const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const maxLines = Math.max(...Object.values(files).map(f => f.lines.length));
+        let timer = null;
+
+        const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        const lineLen = line => line.reduce((n, seg) => n + seg[1].length, 0);
+        const totalChars = file => file.lines.reduce((n, l) => n + lineLen(l), 0) + file.lines.length - 1;
+
+        function row(num, html) {
+            return '<div class="flex">' +
+                '<span class="w-12 shrink-0 pr-5 text-right text-gray-600 select-none">' + num + '</span>' +
+                '<span class="whitespace-pre">' + (html || " ") + '</span></div>';
+        }
+
+        function draw(file, count) {
+            let left = count;
+            let caretDone = false;
+            let out = "";
+
+            file.lines.forEach((line, i) => {
+                if (caretDone) { out += row(i + 1, ""); return; }
+
+                const show = Math.min(left, lineLen(line));
+                let budget = show;
+                let html = "";
+                for (const [cls, txt] of line) {
+                    if (budget <= 0) break;
+                    const part = txt.slice(0, budget);
+                    budget -= part.length;
+                    html += '<span class="tk-' + cls + '">' + esc(part) + '</span>';
+                }
+                left -= show;
+
+                if (left === 0) {
+                    html += '<span class="caret" aria-hidden="true"></span>';
+                    caretDone = true;
+                    posEl.textContent = "Ln " + (i + 1) + ", Col " + (show + 1);
+                } else {
+                    left -= 1; // newline
+                }
+                out += row(i + 1, html);
+            });
+
+            // keep the editor the same height across files
+            for (let i = file.lines.length; i < maxLines; i++) {
+                out += row("", "");
+            }
+            codeEl.innerHTML = out;
+        }
+
+        function play(key, animate) {
+            clearInterval(timer);
+            const file = files[key];
+            const total = totalChars(file);
+            langEl.textContent = file.lang;
+
+            if (!animate || reduceMotion) { draw(file, total); return; }
+
+            let c = 0;
+            const step = key === "website" ? 2 : 3;
+            draw(file, 0);
+            timer = setInterval(() => {
+                c = Math.min(total, c + step);
+                draw(file, c);
+                if (c >= total) clearInterval(timer);
+            }, 22);
+        }
+
+        function select(tab, focus) {
+            tabs.forEach(t => {
+                const on = t === tab;
+                t.setAttribute("aria-selected", on ? "true" : "false");
+                t.tabIndex = on ? 0 : -1;
+            });
+            panel.setAttribute("aria-labelledby", tab.id);
+            if (focus) tab.focus();
+            play(tab.dataset.file, true);
+        }
+
+        tabs.forEach((tab, i) => {
+            tab.addEventListener("click", () => select(tab, false));
+            tab.addEventListener("keydown", e => {
+                if (e.key === "ArrowRight") { e.preventDefault(); select(tabs[(i + 1) % tabs.length], true); }
+                if (e.key === "ArrowLeft") { e.preventDefault(); select(tabs[(i - 1 + tabs.length) % tabs.length], true); }
+            });
+        });
+
+        play("website", true);
+    </script>
+
+</body>
+
+</html>
